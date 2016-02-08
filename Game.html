@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>My times tables game.</title>
+    </head>
+    <body>
+      <h1> Times Tables!</h1>
+      <p1> Random times tables questions will appear, type the correct answer in the box. If you get it wrong, you will have to start again.</p1>
+      <div id="div1"><p1></p1></div>
+      <div id="div2"><p1></p1></div>
+      <input id = "MrInput"></input>
+      <script>
+
+      
+      var num1 = Math.random() *12;      
+      var realnum1 = Math.ceil(num1);
+      console.log (realnum1);
+      var num2 = Math.random() *12;
+      var realnum2 = Math.ceil(num2);
+      console.log (realnum2);
+
+      var div1 = document.getElementById("div1");
+      div1.innerHTML = (realnum1 + " x " + realnum2);
+      
+      
+      var score = 0;
+
+      /*var num1 = Math.random() *12;      
+      var realnum1 = Math.ceil(num1);
+
+      var num2 = Math.random() *12;
+      var realnum2 = Math.ceil(num2)*/
+
+
+      var question = function() {
+
+          /*var num1 = Math.random() *12;      
+          var realnum1 = Math.ceil(num1);
+          console.log (realnum1);
+          var num2 = Math.random() *12;
+          var realnum2 = Math.ceil(num2);
+          console.log (realnum2);*/
+
+          var div1 = document.getElementById("div1");
+          div1.innerHTML = (realnum1 + " x " + realnum2);
+
+      }; // Close question
+
+      var checkuserans = function() {
+        var myInput = document.getElementById("MrInput");
+        if (parseInt(myInput.value) == (realnum1 * realnum2)){
+          question();
+          score = (score + 1);
+          console.log (score);
+        } else {
+          console.log(parseInt(myInput.value) + " " + realnum1 + " " + realnum2);
+        }
+
+      }; // Close checkuerans
+
+      </script>
+      <button onclick = "question();">Start</button>
+      <button onclick = "checkuserans();">Check</button>
+    </body>
+  </html>
+
